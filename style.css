@@ -3,18 +3,54 @@ body {
     margin: 20px;
     text-align: center;
 }
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .toolbar {
     margin-bottom: 10px;
 }
+
 button {
+    border-radius: 20px;
+    background-color: #ac4fcb;
+    color: white;
+    border: none;
     margin: 5px;
     padding: 5px 10px;
     cursor: pointer;
 }
+
+button:hover {
+    background-color: white;
+    color: #ac4fcb ;
+}
+
 #editor {
+    display: flex;
     width: 90%;
     height: 300px;
-    border: 1px solid #ccc;
+    border: 1px solid #ac4fcb;
     padding: 10px;
     overflow-y: auto;
+}
+
+.search-container {
+    position: relative;
+}
+.search-box {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+.search-button {
+
+    border-radius: 0%;
+    background-color: #ac4fcb;
+    cursor: pointer;
 }
