@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor de Texto</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2>Editor de Texto</h2>
+    <div class="toolbar">
+        <button onclick="formatText('bold')">Negrita</button>
+        <button onclick="formatText('italic')">Cursiva</button>
+        <button onclick="formatText('underline')">Subrayado</button>
+        <button onclick="formatText('removeFormat')">Borrar Formato</button>
+    </div>
+    <div id="editor" contenteditable="true"></div>
+
+    <script>
+        function formatText(command) {
+            document.execCommand(command, false, null);
+        }
+    </script>
+</body>
+</html>
