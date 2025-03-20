@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -14,17 +14,27 @@
             <button onclick="formatText('italic')">Cursiva</button>
             <button onclick="formatText('underline')">Subrayado</button>
             <button onclick="formatText('removeFormat')">Borrar Formato</button>
-            <div>
-                <input type="text" class="search-box" placeholder="Buscar...">
-                <button class="search-button">🔍</button>
-            </div>
+        </div>
+        <div class="search-bar">
+            <input type="text" id="searchText" placeholder="Buscar palabra">
+            <button onclick="highlightText()">Resaltar</button>
         </div>
         <div id="editor" contenteditable="true"></div>
     </div>
-
     <script>
         function formatText(command) {
             document.execCommand(command, false, null);
+        }
+
+        function highlightText() {
+            let text = document.getElementById("searchText").value;
+            let editor = document.getElementById("editor");
+            let content = editor.innerHTML;
+
+            let regex = new RegExp(text, "gi");
+            let highlighted = content.replace(regex, match => `<b>${match}</b>`);
+
+            editor.innerHTML = highlighted;
         }
     </script>
 </body>
